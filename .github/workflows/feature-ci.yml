@@ -1,21 +1,18 @@
-name : Feature CI/CD Development
+name: Feature CI/CD Development
 
-on :
- push :
-  branches : 
-   - 'feature/*'
+on:
+  push:
+    branches:
+      - 'feature/*'
 
-jobs : 
-  ci :
-      run-on : ubuntu-latest
-      steps :
-      - uses : actions/checkout@v3
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-      - name : runtest
-          run : echo "running on feature branch"
+      - name: Run Test
+        run: echo "running on feature branch"
 
-      - name : deploy
-          run : echo "deploying on feature branch"
-
-      
-                      
+      - name: Deploy
+        run: echo "deploying on feature branch"                      
